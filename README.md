@@ -1,1 +1,2 @@
-# TIL
+# Today I Learned
+In this repo i will be documenting what i will be learning...
