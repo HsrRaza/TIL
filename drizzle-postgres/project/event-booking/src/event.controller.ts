@@ -1,3 +1,4 @@
+import { eq, sql } from "drizzle-orm";
 import { db } from "./db.js";
 import { bookings, events, users } from "./schema.js";
 
@@ -15,3 +16,28 @@ const event = await db.insert(events)
         })
       }
 
+const data = await db.select()
+            .from(bookings)
+            .leftJoin(users,eq(bookings.userId,users.id))
+            .leftJoin(events,eq(bookings.eventId,events.id));
+
+console.log(data);
+
+
+
+
+const results =await db.select({
+        eventId:bookings.eventId,
+        count:sql<number>`count(*)`,
+
+    })
+    .from(bookings)
+    .groupBy(bookings.eventId);
+
+    console.log(results);
+
+
+const  userBookings = await db.select()
+     .from(bookings)
+     .where(eq(bookings.userId,1))
+    
