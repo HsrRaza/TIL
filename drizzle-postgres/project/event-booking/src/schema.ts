@@ -1,4 +1,4 @@
-import { pgTable, serial, text } from "drizzle-orm/pg-core";
+import { integer, pgTable, serial, text } from "drizzle-orm/pg-core";
 
 // users
 export const users = pgTable("users", {
@@ -11,6 +11,7 @@ export const events = pgTable("events", {
     id:serial("id").primaryKey(),
     title:text("title").notNull(),
     date:text("date").notNull(),
+    seatLimit:integer("seat_limit").notNull()
 })
 
 export const bookings = pgTable("bookings",{

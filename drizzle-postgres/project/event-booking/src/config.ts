@@ -1,7 +1,7 @@
 import { db } from "./db.js";
 import { sql } from "drizzle-orm";
 
-export async function testConnection() {
+const testConnection = async () => {
   try {
     const result = await db.execute(sql`SELECT 1`);
     console.log("✅ Database connected:", result);
@@ -9,3 +9,5 @@ export async function testConnection() {
     console.error("❌ Database connection failed:", error);
   }
 }
+
+export default testConnection;
