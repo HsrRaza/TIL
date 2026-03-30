@@ -1,7 +1,8 @@
 import { and, eq } from "drizzle-orm";
-import { db } from "./db.js";
-import { bookings, events } from "./schema.js";
+
 import type { Request, Response } from "express";
+import { db } from "../db.js";
+import { events } from "../schema.js";
 
 
 
@@ -36,7 +37,7 @@ export const getEvents = async(req:Request, res:Response) => {
     })
 }
 
-const deleteEvent = async(req:Request, res:Response)=>{
+export const deleteEvent = async(req:Request, res:Response)=>{
 
     const eventId  = Number(req.params.eventId);
 

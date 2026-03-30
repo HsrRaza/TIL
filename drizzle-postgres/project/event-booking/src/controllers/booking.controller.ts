@@ -1,6 +1,6 @@
 import { and, eq, sql } from "drizzle-orm";
-import { bookings, events } from "./schema.js";
-import { db } from "./db.js";
+import { bookings, events } from "../schema.js";
+import { db } from "../db.js";
 import type { Request, Response } from "express";
 
 export const createBookingEvent = async (req: Request, res: Response) => {
