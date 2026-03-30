@@ -10,6 +10,7 @@ export const users = pgTable("users", {
 export const events = pgTable("events", {
     id:serial("id").primaryKey(),
     title:text("title").notNull(),
+    description:text("description"),
     date:text("date").notNull(),
     seatLimit:integer("seat_limit").notNull()
 })
