@@ -16,7 +16,14 @@ emitter.on('login', ()=>{
     
 })
 
-
+emitter.on("login", ()=>{
+    console.log("update last login");
+    
+})
+emitter.on("error", (err)=>{
+    console.error(err.message);
+    
+})
 
 emitter.emit('login' , "Hassan")
 emitter.emit("error", new Error("Something went wrong"))
